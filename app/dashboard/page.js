@@ -103,17 +103,19 @@ const Dashboard = () => {
 
 
         <div>
-        {/* {console.log(userUrls)} */}
+       
           <h2 className="text-xl font-semibold mb-2">Your Shortened URLs</h2>
           {Array.isArray(userUrls) && userUrls.length === 0 ? (
             <p className="text-gray-600">No URLs created yet.</p>
           ) : (
             userUrls.map((url) => (
-              <div key={url._id} className="bg-slate-50 p-4 w-200 rounded-3xl shadow mb-4 flex items-center justify-center gap-3 ">
+              <div key={url._id} className="bg-slate-50 p-4 w-200 rounded-3xl shadow mb-4 flex items-center  justify-between gap-3 ">
+                <div className="flex gap-3 items-center justify-center">
+
                 {qrCodes[url._id] && (
                   <img src={qrCodes[url._id]} alt="QR Code" className="w-24 h-24 mt-2" />
                 )}
-                <div className="overflow-hidden">
+                <div>
                   <p>
                     <strong>Original:</strong>{" "}
                     <a
@@ -139,10 +141,11 @@ const Dashboard = () => {
                   <p>
                     <strong>Clicks:</strong> {url.clicks}
                   </p>
-                 
+                 </div>
                   
                 </div>
-                <div className="">
+                
+                <div>
                   <div className="hover:text-green-300 cursor-pointer"onClick={()=>{navigator.clipboard.writeText(`${process.env.NEXT_PUBLIC_URL}/${url.shortId}`)
                   toast.success("Copied To Clipboard")
                   
