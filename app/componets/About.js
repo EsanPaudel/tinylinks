@@ -27,20 +27,20 @@ const About = () => {
     })();
   }, []);
   return (
-    <div className="p-20">
-      <section className="flex items-center gap-20 flex-col py-20">
+    <div className="p-20 max-sm:p-5 ">
+      <section className="flex items-center gap-20 flex-col py-20 max-sm:p-5 ">
         <div>
-          <h2 className="text-center text-5xl font-bold reveal">
+          <h2 className="text-center text-5xl font-bold reveal max-sm:text-3xl ">
             One short link, infinite possibilities
           </h2>
-          <p className="text-center text-xl px-30 text-gray-500 reveal">
+          <p className="text-center text-xl px-30 text-gray-500 reveal max-sm:text-sm max-sm:px-5  ">
             A short link is a powerful marketing tool when you use it carefully.
             It is not just a link but a medium between your customer and their
             destination.
           </p>
         </div>
 
-        <div className="flex items-center justify-center gap-6">
+        <div className="flex items-center justify-center gap-6 max-lg:flex-wrap  ">
           <Card
             icon={icon1}
             h3="Smart Targeting"
@@ -63,7 +63,7 @@ const About = () => {
               them."/>
         </div>
       </section>
-      <section className="flex items-center justify-center gap-5 py-20">
+      <section className="flex items-center justify-center gap-5 py-20 max-lg:flex-wrap">
         <Image src={features} alt="features" className="reveal" />
         <div className="flex flex-col gap-6 ">
           <p className="rounded-full bg-pink-100 text-red-500 font-medium py-1 px-2 w-max reveal">
@@ -95,7 +95,7 @@ const About = () => {
           </ul>
         </div>
       </section>
-      <section className="flex items-center justify-center gap-5 py-20">
+      <section className="flex items-center justify-center gap-5 py-20 max-lg:flex-wrap-reverse ">
         <div className="flex flex-col gap-6">
           <p className="rounded-full bg-pink-100 text-red-500 font-medium py-1 px-2 w-max reveal">
             QR Code

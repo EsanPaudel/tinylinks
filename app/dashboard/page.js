@@ -13,7 +13,7 @@ const Dashboard = () => {
   const [qrCode, setQrCode] = useState("");
   const [userUrls, setUserUrls] = useState([]);
   const [qrCodes, setQrCodes] = useState({});
-  
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -79,11 +79,12 @@ const Dashboard = () => {
   useEffect(() => {
     fetchUserUrls();
   }, []);
-
+  
   return (
+    
     <div className="min-h-screen">
       <div className="flex items-center justify-center flex-col p-10">
-        <form onSubmit={handleSubmit} className="my-12 w-200">
+        <form onSubmit={handleSubmit} className="my-12 w-200 max-lg:w-screen">
           <div className="shorten bg-slate-100 rounded-full py-2 pl-5 pr-2 flex w-full items-center gap-3 justify-between">
             <div className="flex items-center justify-center gap-3">
               <Unlink color="gray" size={"20px"} />
@@ -109,8 +110,8 @@ const Dashboard = () => {
             <p className="text-gray-600">No URLs created yet.</p>
           ) : (
             userUrls.map((url) => (
-              <div key={url._id} className="bg-slate-50 p-4 w-200 rounded-3xl shadow mb-4 flex items-center  justify-between gap-3 ">
-                <div className="flex gap-3 items-center justify-center">
+              <div key={url._id} className="bg-slate-200 p-4 w-200 rounded-3xl shadow mb-4 flex items-center  justify-between gap-3 max-lg:w-screen  max-lg:flex-col">
+                <div className="flex gap-3 items-center justify-center max-lg:flex-col">
 
                 {qrCodes[url._id] && (
                   <img src={qrCodes[url._id]} alt="QR Code" className="w-24 h-24 mt-2" />
@@ -145,7 +146,7 @@ const Dashboard = () => {
                   
                 </div>
                 
-                <div>
+                <div className=" flex items-center justify-center flex-col max-lg:flex-row">
                   <div className="hover:text-green-300 cursor-pointer"onClick={()=>{navigator.clipboard.writeText(`${process.env.NEXT_PUBLIC_URL}/${url.shortId}`)
                   toast.success("Copied To Clipboard")
                   

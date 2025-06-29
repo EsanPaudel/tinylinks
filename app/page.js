@@ -5,12 +5,12 @@ import About from "./componets/About";
 export default function Home() {
   return (
     <div>
-      <main className="hero min-h-screen bg-[#e3f3ff] flex items-center px-20 py-20  ">
+      <main className="hero min-h-screen bg-[#e3f3ff] flex items-center px-20 py-20 max-sm:flex-wrap-reverse max-sm:px-5">
         <div className="flex items-start justify-center gap-5 flex-col ">
           <p className="rounded-full bg-pink-100 text-red-500 font-medium py-1 px-2 w-max">
             Easy Link Shortening
           </p>
-          <h1 className="text-6xl font-bold ">
+          <h1 className="text-6xl font-bold max-sm:text-4xl ">
             Tiny short URL & QR code generator
           </h1>
 

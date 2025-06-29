@@ -23,7 +23,7 @@ const Header = () => {
   }, [menu]);
 
   return (
-    <nav className="flex items-center justify-between fixed w-full top-0 bg-transparent p-4 px-20 backdrop-blur-2xl z-10">
+    <nav className="flex items-center justify-between fixed w-full top-0 bg-transparent p-4 px-20 backdrop-blur-2xl z-10 max-sm:px-5">
       <Link
         href="/"
         className="flex font-bold gap-2 text-2xl items-center justify-center"
@@ -44,7 +44,7 @@ const Header = () => {
             className="rounded-full cursor-pointer"
             onClick={() => setMenu(!menu)}
           />
-          <Link href={"/dashboard"}>
+          <Link href={"/dashboard"} className="max-sm:hidden">
             <Pributton text={"Dashboard"} padding={1} />
           </Link>
         </div>
